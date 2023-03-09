@@ -157,6 +157,17 @@
 <p>  <img src="https://img.mjj.today/2023/03/09/783207f8f371fe8c3692bb0cc703554e.png" alt="783207f8f371fe8c3692bb0cc703554e.png"></p>
 <p>  发现一个疑似flag的东西，页面提示caesar也就是凯撒加密，所以这应该是flag凯撒加密后的结果，所以复制粘贴到在线解码网站，位移为3，成功解出flag！</p>
 <p>  <img src="https://img.mjj.today/2023/03/09/91c012b8a5cdc42917a1bcc7c19704ee.png" alt="91c012b8a5cdc42917a1bcc7c19704ee.png"></p>
+<h1 id="5-Star-Poet-Blog"><a href="#5-Star-Poet-Blog" class="headerlink" title="5.Star Poet Blog"></a>5.Star Poet Blog</h1><p>题目：<br>  <img src="https://img.mjj.today/2023/03/09/cfdb5f14b68cbf9db5e0751040f0846e.png" alt="cfdb5f14b68cbf9db5e0751040f0846e.png"></p>
+<p>  点开题目链接，如下<br><img src="https://img.mjj.today/2023/03/09/96ed809d4cf56d198739c92b4e9068a7.png" alt="96ed809d4cf56d198739c92b4e9068a7.png"></p>
+<p>  题目提到了一个password.txt 试着在网址后面加password.txt，失败，观察，前面两个链接，一个是诗人介绍（没什么用），一个如下：<br><img src="https://img.mjj.today/2023/03/09/c0bfe842428527725a44c8c0395b01e9.png" alt="c0bfe842428527725a44c8c0395b01e9.png"></p>
+<p>  第一行是诗，第二行是节，第三行是行，第四行是单词。<br>  后面是五首诗的链接，<br>  发现前两个链接的网址如下：<a target="_blank" rel="noopener" href="https://star-poet-blog.acmcyber.com/pages/poetry101.html">https://star-poet-blog.acmcyber.com/pages/poetry101.html</a><br>  而后面链接网址则是：<a target="_blank" rel="noopener" href="https://star-poet-blog.acmcyber.com/archive/annabel_lee.txt">https://star-poet-blog.acmcyber.com/archive/annabel_lee.txt</a><br>  发现第二个有.txt，所以可能是题目所有txt格式的文件都放在achieve目录下，所以如下操作：<br>  <img src="https://img.mjj.today/2023/03/09/b30c99a19541e4bfd4674be0f4549cae.png" alt="b30c99a19541e4bfd4674be0f4549cae.png"></p>
+<p>  然后回车，就得到了password.txt如下：<br><img src="https://img.mjj.today/2023/03/09/726ff8104798c9c854fc29192a2ad270.png" alt="726ff8104798c9c854fc29192a2ad270.png"><br>  有一个flag，<br>  flag{1377_2127_3343_4241_5864}<br>  不过不正确，下面是一链接：<br>  <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Book_cipher">https://en.wikipedia.org/wiki/Book_cipher</a></p>
+<p>  点开发现是一些有关图书密码的东西，<br>  所以推测给的flag应该是被图书密码加密后的密文，学习后，结合前面打开的链接内容（第一行是诗，第二行是节，第三行是行，第四行是单词。）flag的每一小部分刚好四个数，对应的应该就是诗，节，行，单词的序号，所以就可以根据规则解出flag。</p>
+<h1 id="6-Secure-Platform"><a href="#6-Secure-Platform" class="headerlink" title="6.Secure Platform"></a>6.Secure Platform</h1><p>打开链接，点击get your flag，得到:<br><img src="https://img.mjj.today/2023/03/09/f0a89acc438bc3c92541110b33da7c2f.png" alt="f0a89acc438bc3c92541110b33da7c2f.png"><br>大意是平台要由windows改为INTEGRITY-178B，所以用bp打开，<br><img src="https://img.mjj.today/2023/03/09/bed610094d74f2b27b977fd569e83290.png" alt="bed610094d74f2b27b977fd569e83290.png"></p>
+<p>修改选中的一行的window，<br><img src="https://img.mjj.today/2023/03/09/b3698dcd3b8da420b71f84e26ee415d1.png" alt="b3698dcd3b8da420b71f84e26ee415d1.png"><br>点击send发送请求，得到flag</p>
+<h1 id="7-Bank"><a href="#7-Bank" class="headerlink" title="7.Bank"></a>7.Bank</h1><p><img src="https://img.mjj.today/2023/03/09/678583e3f7d82ff902d2a097dbb16e11.png" alt="678583e3f7d82ff902d2a097dbb16e11.png"><br>点开如上题目链接，发现已经给了表名：flags，列名：flag，value；所以直接sql注入语句，查询列名<br>a’ union select 1,flag,value from flags –+<br>Password为a，发现没反应，</p>
+<p><img src="https://img.mjj.today/2023/03/09/4bd2348aee22b28e406e31aa77943146.png" alt="4bd2348aee22b28e406e31aa77943146.png"></p>
+<p>如上图，发现select被替换成了空，所以尝试双写绕过<br>Payload：a’ union selselectect 1,flag,value from flags –+<br><img src="https://img.mjj.today/2023/03/09/bed5a4d0af89d11b68c6a28bf75b9a6b.png" alt="bed5a4d0af89d11b68c6a28bf75b9a6b.png"><br>就能得到flag啦</p>
 <p>  未完待续 :)</p>
 
       </section>
