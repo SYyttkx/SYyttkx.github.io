@@ -137,9 +137,27 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="1-Bagels"><a href="#1-Bagels" class="headerlink" title="1.Bagels"></a>1.Bagels</h1><p><img src="https://img.mjj.today/2023/03/09/aeeb6851cf65f827314ae44f54b1e8d3.png" alt="aeeb6851cf65f827314ae44f54b1e8d3.png"><br>  打开网址如上，右键查看网页源代码，发现有一个script.js链接，<br><img src="https://img.mjj.today/2023/03/09/521fd5a116a8453b7f07daf2d58c8522.png" alt="521fd5a116a8453b7f07daf2d58c8522.png"></p>
-<p>打开链接发现flag<br>后来发现也可以打开开发者工具，在命令行输入document.cookie然后回车获得flag（这也与最开始网页中的提示<em>cookie</em>相呼应）。</p>
-<p>未完待续 :)</p>
+        <h1 id="1-Bagels"><a href="#1-Bagels" class="headerlink" title="1.Bagels"></a>1.Bagels</h1><p><img src="https://img.mjj.today/2023/03/09/aeeb6851cf65f827314ae44f54b1e8d3.png" alt="aeeb6851cf65f827314ae44f54b1e8d3.png"><br>  打开网址如上，右键查看网页源代码，发现有一个script.js链接，<br><img src="https://img.mjj.today/2023/03/09/521fd5a116a8453b7f07daf2d58c8522.png" alt="521fd5a116a8453b7f07daf2d58c8522.png"><br>  打开链接发现flag<br>后来发现也可以打开开发者工具，在命令行输入document.cookie然后回车获得flag（这也与最开始网页中的提示<em>cookie</em>相呼应）。</p>
+<h1 id="2-Birthday"><a href="#2-Birthday" class="headerlink" title="2.Birthday"></a>2.Birthday</h1><p>题目：<br>  My friend made a comment about her birthday coming up soon, but I can’t remember when it is. Can you figure it out for me?</p>
+<p>  打开题目链接，什么也没有<br>  右键查看网页源代码，发现flag<br><img src="https://img.mjj.today/2023/03/09/0605e4ecc1f9d8f35001bea9e69492c9.png" alt="0605e4ecc1f9d8f35001bea9e69492c9.png"></p>
+<h1 id="3-Cat"><a href="#3-Cat" class="headerlink" title="3.Cat"></a>3.Cat</h1><p>  打开题目链接，没有发现什么信息，右键查看网页源代码，发现图片名称为Robot Cat.jepg 所以猜测是robot协议<br>  所以在网址后面加入&#x2F;robots.txt回车</p>
+<p><img src="https://img.mjj.today/2023/03/09/1a312cef9088af28c57979b1212200f6.png" alt="1a312cef9088af28c57979b1212200f6.png"></p>
+<p>发现页面显示：</p>
+<blockquote>
+<p>User-agent: *</p>
+</blockquote>
+<blockquote>
+<p>Disallow: &#x2F;cat&#x2F;vet.html</p>
+</blockquote>
+<p>所以猜测flag在&#x2F;vet.html中。<br>在网址后面加&#x2F;vet.html回车</p>
+<p><img src="https://img.mjj.today/2023/03/09/4cce20b68941c3704cf1631215c5d83b.png" alt="4cce20b68941c3704cf1631215c5d83b.png"></p>
+<p>获得flag</p>
+<h1 id="4-mean-girls"><a href="#4-mean-girls" class="headerlink" title="4.mean girls"></a>4.mean girls</h1><p>  打开题目网址是一个登录界面，随便乱登失败，查看网页源代码也没有发现，于是打开开发者工具<br>  <img src="https://img.mjj.today/2023/03/09/e3f386c34686fdfec3fe254a30c5f677.png" alt="e3f386c34686fdfec3fe254a30c5f677.png"></p>
+<p>  在source处发现了js代码，发现里面有用户名和密码！！！并且只要输入就可以返回flag.Html<br>  所以输入找到的用户名和密码登录</p>
+<p>  <img src="https://img.mjj.today/2023/03/09/783207f8f371fe8c3692bb0cc703554e.png" alt="783207f8f371fe8c3692bb0cc703554e.png"></p>
+<p>  发现一个疑似flag的东西，页面提示caesar也就是凯撒加密，所以这应该是flag凯撒加密后的结果，所以复制粘贴到在线解码网站，位移为3，成功解出flag！</p>
+<p>  <img src="https://img.mjj.today/2023/03/09/91c012b8a5cdc42917a1bcc7c19704ee.png" alt="91c012b8a5cdc42917a1bcc7c19704ee.png"></p>
+<p>  未完待续 :)</p>
 
       </section>
 
